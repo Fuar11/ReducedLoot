@@ -7,7 +7,8 @@ namespace ReducedLoot
         internal static SaveDataManager sdm = new SaveDataManager();
         public override void OnInitializeMelon()
         {
-            MelonLogger.Msg("Reduced Loot is online!");  
+            MelonLogger.Msg("Reduced Loot is online!");
+            Settings.OnLoad();
         }
     }
 }

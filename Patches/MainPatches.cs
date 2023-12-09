@@ -42,23 +42,68 @@ namespace ReducedLoot.Patches
             private static void Prefix(GearItem __instance)
             {
                 
-                if(__instance.m_HasBeenOwnedByPlayer || __instance.m_HasBeenEquippedAndUsed || __instance.m_BeenInPlayerInventory || __instance.m_InPlayerInventory || __instance.m_ItemLooted)
+                if(__instance.m_HasBeenEquippedAndUsed || __instance.m_BeenInPlayerInventory || __instance.m_InPlayerInventory || __instance.m_ItemLooted)
                 {
                     return;
                 }
 
+                /**
                 SaveDataManager sdm = Main.sdm;
 
                 if (sdm.LoadSceneData(GameManager.m_ActiveScene) != null)
                 {
                     return;
                 }
+                **/
 
-
-                float chance = Utils.GetDespawnChance(__instance.name);
-                if (Il2Cpp.Utils.RollChance(chance))
+                if(IsGameScene() && !GameManager.m_SceneWasRestored)
                 {
-                    Destroy(__instance.gameObject);
+                    float chance = Utils.GetDespawnChance(__instance.name);
+                    if (Il2Cpp.Utils.RollChance(chance))
+                    {
+                        Destroy(__instance.gameObject);
+                    }
+                }
+            }
+
+            public static bool IsGameScene(string? sceneName = null)
+            {
+                sceneName = string.IsNullOrEmpty(sceneName) ? Name().ToLowerInvariant() : sceneName.ToLowerInvariant();
+                if (
+                    GameManager.BOOT.ToLowerInvariant() == sceneName
+                    || GameManager.EMPTY.ToLowerInvariant() == sceneName
+                    || GameManager.GetTargetMainMenuSceneName().ToLowerInvariant() == sceneName
+                    || string.IsNullOrEmpty(sceneName)
+                    )
+                {
+                    return false;
+                }
+                return true;
+            }
+
+            public static string Name()
+            {
+                return UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+            }
+        }
+
+        [HarmonyPatch(typeof(Container), nameof(Container.PopulateWithRandomGear))]
+
+        public class ItemInContainerRemover
+        {
+
+            public static void Postfix(Container __instance)
+            {
+
+                for(int i = 0; i < __instance.m_GearToInstantiate.Count; i++)
+                {
+                    string name = __instance.m_GearToInstantiate[i].GetComponent<GearItem>().name;
+                    float chance = Utils.GetDespawnChance(__instance.m_GearToInstantiate[i].GetComponent<GearItem>().name);
+                    
+                    if (Il2Cpp.Utils.RollChance(chance))
+                    {
+                        __instance.m_GearToInstantiate.RemoveAt(i);
+                    } 
                 }
             }
 
