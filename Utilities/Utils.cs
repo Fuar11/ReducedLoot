@@ -127,7 +127,7 @@ namespace ReducedLoot
             }
         }
 
-       public static string[] itemsToReduceHP = { "GEAR_Hatchet", "GEAR_Knife", "GEAR_Rifle", "GEAR_Revolver", "GEAR_Prybar", "GEAR_FlareGun", "GEAR_RifleAmmoBox", "GEAR_RifleAmmoSingle", "GEAR_RevolverAmmoBox", "GEAR_RevolverAmmoSingle", "GEAR_KeroseneLampB", "GEAR_RabbitskinHat", "GEAR_RabbitskinMittens"};
+       public static string[] itemsToReduceHP = { "GEAR_Hatchet", "GEAR_Knife", "GEAR_Rifle", "GEAR_Revolver", "GEAR_Prybar", "GEAR_FlareGun", "GEAR_RifleAmmoBox", "GEAR_RifleAmmoSingle", "GEAR_RevolverAmmoBox", "GEAR_RevolverAmmoSingle", "GEAR_KeroseneLampB", "GEAR_RabbitskinHat", "GEAR_RabbitskinMittens", "GEAR_SewingKit", "GEAR_RifleCleaningKit", "GEAR_SharpeningStone"};
 
 
     }
