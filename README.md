@@ -3,7 +3,9 @@
 Reduced Loot is a gameplay mod for **The Long Dark** by Hinterland Studios
 
 It aims to increase difficulty across all experience modes, by reducing the amount of certain types of items throughout the game world. It works by 
-despawning these items, by chance, upon entering a new scene for the first time. 
+despawning these items, by chance, upon entering a new scene for the first time. Values are adjustable in the Mod Settings menu. 
+
+If an item doesn't despawn, there is a chance it's condition can be reduced from the normal values, especially on tools. 
 
 These items include:
 * Hatchet
@@ -13,10 +15,12 @@ These items include:
 * Rifle
 * Flare gun
 * Revolver & Rifle ammo
+* Bow and arrows
 * Red Flares
 * MRE
 * Energy Bars
 * Simple & Quality tools
+* Flight jacket, aviator cap, expedition parka, wool clothing, fisherman's sweater, etc...
 * Matches
 * Accelerant
 * Antiseptic
@@ -36,6 +40,7 @@ These items may be much harder to come across as you progress through the game w
 * Install the following dependencies in your mods folder:
 
 - [ModData](https://github.com/dommrogers/ModData/releases/latest)
+- [ModSettings](https://github.com/dommrogers/ModSettings/releases/latest)
 
 * Download and install the latest release and drop it in your mods folder
 
