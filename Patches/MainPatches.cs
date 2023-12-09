@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Il2Cpp;
 using System.Collections;
+using Random = System.Random;
 
 namespace ReducedLoot.Patches
 {
@@ -63,6 +64,17 @@ namespace ReducedLoot.Patches
                     {
                         Destroy(__instance.gameObject);
                     }
+                    else
+                    {
+                        string[] items = Utils.itemsToReduceHP;
+
+                        Random rand = new Random();
+
+                        if (items.Any(x => x == __instance.name) && Il2Cpp.Utils.RollChance(45))
+                        {
+                            __instance.m_CurrentHP = rand.Next(15, 100);
+                        }
+                    }
                 }
             }
 
@@ -98,12 +110,24 @@ namespace ReducedLoot.Patches
                 for(int i = 0; i < __instance.m_GearToInstantiate.Count; i++)
                 {
                     string name = __instance.m_GearToInstantiate[i].GetComponent<GearItem>().name;
+                    GearItem gi = __instance.m_GearToInstantiate[i].GetComponent<GearItem>();
                     float chance = Utils.GetDespawnChance(__instance.m_GearToInstantiate[i].GetComponent<GearItem>().name);
                     
                     if (Il2Cpp.Utils.RollChance(chance))
                     {
                         __instance.m_GearToInstantiate.RemoveAt(i);
-                    } 
+                    }
+                    else
+                    {
+                        string[] items = Utils.itemsToReduceHP;
+
+                        Random rand = new Random();
+
+                        if (items.Any(x => x == name) && Il2Cpp.Utils.RollChance(45))
+                        {
+                            gi.m_CurrentHP = rand.Next(15, 100);
+                        }
+                    }
                 }
             }
 
