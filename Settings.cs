@@ -46,6 +46,11 @@ namespace ReducedLoot
         [Slider(0, 100)]
         public int HacksawChance = 70;
 
+        [Name("Heavy Hammer")]
+        [Description("Percent chance to despawn heavy hammers when they are spawned in.")]
+        [Slider(0, 100)]
+        public int HammerChance = 45;
+
         [Name("Revolver")]
         [Description("Percent chance to despawn revolvers when they are spawned in.")]
         [Slider(0, 100)]
@@ -205,6 +210,11 @@ namespace ReducedLoot
         [Description("Percent chance to despawn oats when they are spawned in.")]
         [Slider(0, 100)]
         public int OatsChance = 50;
+
+        [Name("Insulated Flask")]
+        [Description("Percent chance to despawn insulated flasks when they are spawned in.")]
+        [Slider(0, 100)]
+        public int FlaskChance = 20; //i like the flasks
 
         [Name("Spray Paint")]
         [Description("Percent chance to despawn spray paint cans when they are spawned in.")]

@@ -6,6 +6,12 @@ namespace ReducedLoot
     {
        public static float GetDespawnChance(string itemName)
         {
+
+            if (itemName.ToLowerInvariant().Contains("flask"))
+            {
+                return Settings.settings.FlaskChance;
+            }
+
             switch (itemName)
             {
                 case "GEAR_Hatchet":
@@ -60,6 +66,8 @@ namespace ReducedLoot
                     return Settings.settings.BedrollChance;
                 case "GEAR_Hacksaw":
                     return Settings.settings.HacksawChance;
+                case "GEAR_HeavyHammer":
+                    return Settings.settings.HammerChance;
                 case "GEAR_Bow":
                     return Settings.settings.BowChance;
                 case "GEAR_Arrow":
