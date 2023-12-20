@@ -43,19 +43,10 @@ namespace ReducedLoot.Patches
             private static void Prefix(GearItem __instance)
             {
                 
-                if(__instance.m_HasBeenEquippedAndUsed || __instance.m_BeenInPlayerInventory || __instance.m_InPlayerInventory || __instance.m_ItemLooted)
+                if(__instance.m_HasBeenEquippedAndUsed || __instance.m_BeenInPlayerInventory || __instance.m_InPlayerInventory || __instance.m_ItemLooted || __instance.IsInsideContainer())
                 {
                     return;
                 }
-
-                /**
-                SaveDataManager sdm = Main.sdm;
-
-                if (sdm.LoadSceneData(GameManager.m_ActiveScene) != null)
-                {
-                    return;
-                }
-                **/
 
                 if(IsGameScene() && !GameManager.m_SceneWasRestored)
                 {

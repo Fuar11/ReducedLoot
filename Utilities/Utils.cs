@@ -56,6 +56,10 @@ namespace ReducedLoot
                     return Settings.settings.FlareChance;
                 case "GEAR_BlueFlare":
                     return Settings.settings.MarineFlareChance;
+                case "GEAR_Bedroll":
+                    return Settings.settings.BedrollChance;
+                case "GEAR_Hacksaw":
+                    return Settings.settings.HacksawChance;
                 case "GEAR_Bow":
                     return Settings.settings.BowChance;
                 case "GEAR_Arrow":

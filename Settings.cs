@@ -41,6 +41,11 @@ namespace ReducedLoot
         [Slider(0, 100)]
         public int PrybarChance = 55;
 
+        [Name("Hacksaw")]
+        [Description("Percent chance to despawn hacksaws when they are spawned in.")]
+        [Slider(0, 100)]
+        public int HacksawChance = 70;
+
         [Name("Revolver")]
         [Description("Percent chance to despawn revolvers when they are spawned in.")]
         [Slider(0, 100)]
@@ -105,6 +110,11 @@ namespace ReducedLoot
         [Description("Percent chance to despawn marine flares when they are spawned in.")]
         [Slider(0, 100)]
         public int MarineFlareChance = 45;
+
+        [Name("Bedroll")]
+        [Description("Percent chance to despawn bedrolls when they are spawned in.")]
+        [Slider(0, 100)]
+        public int BedrollChance = 80;
 
         [Name("Survival Bow")]
         [Description("Percent chance to despawn bows when they are spawned in.")]
