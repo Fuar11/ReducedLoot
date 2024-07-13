@@ -11,6 +11,9 @@ These items include:
 * Hatchet
 * Knife
 * Prybar
+* Hacksaw
+* Hammer
+* Bedroll
 * Revolver
 * Rifle
 * Flare gun
@@ -30,6 +33,7 @@ These items include:
 * Coffee Cup
 * Herbal Tea package
 * Oats
+* Insulated Flask
 * Spray Paint
 
 These items may be much harder to come across as you progress through the game world. But nothing is guaranteed as it is based on chance. 
