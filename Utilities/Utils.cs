@@ -135,7 +135,7 @@ namespace ReducedLoot
                 case "GEAR_DownParka":
                     return Settings.settings.SimpleParkaChance;
                 default:
-                    return 10;
+                    return 0;
             }
         }
 
