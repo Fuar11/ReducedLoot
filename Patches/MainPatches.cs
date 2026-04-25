@@ -73,8 +73,7 @@ namespace ReducedLoot.Patches
             {
                 sceneName = string.IsNullOrEmpty(sceneName) ? Name().ToLowerInvariant() : sceneName.ToLowerInvariant();
                 if (
-                    GameManager.BOOT.ToLowerInvariant() == sceneName
-                    || GameManager.EMPTY.ToLowerInvariant() == sceneName
+                    GameManager.EMPTY.ToLowerInvariant() == sceneName
                     || GameManager.GetTargetMainMenuSceneName().ToLowerInvariant() == sceneName
                     || string.IsNullOrEmpty(sceneName)
                     )
